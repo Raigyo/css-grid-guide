@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "rm -rf dist && parcel build index.html --public-url https://raigyo.github.io/css-flexbox-guide/",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url https://raigyo.github.io/css-grid-guide/",
     "deploy": "gh-pages -d dist"
   },
   "author": "",
