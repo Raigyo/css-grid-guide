@@ -1,0 +1,59 @@
+{
+  "name": "js-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url https://raigyo.github.io/css-flexbox-guide/",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "autoprefixer": "^9.8.6",
+    "css-mqpacker": "^7.0.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "gh-pages": "^3.1.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-bundle-manifest": "^0.2.0",
+    "parcel-plugin-custom-dist-structure": "^1.1.16",
+    "prettier": "^2.1.1",
+    "sass": "^1.26.10",
+    "typescript": "^4.0.2"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "assets/js",
+      ".map": "assets/maps",
+      ".css": "assets/css",
+      "assets/images": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".webp",
+        ".gif"
+      ],
+      "assets/medias": [
+        ".ogg",
+        ".webm",
+        ".mp4",
+        ".mp3",
+        ".wav"
+      ]
+    },
+    "options": {
+      "development": true
+    }
+  }
+}
