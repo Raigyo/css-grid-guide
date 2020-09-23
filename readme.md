@@ -570,12 +570,108 @@ As we have seen before it's possible to refer to the names as we have seen befor
   margin: 30px auto;
   display: grid;
   grid-template-rows: repeat(2, 150px);
-  grid-template-columns: max-content 1fr 1fr;
+  grid-template-columns: max-content 1fr min-content;
   grid-gap: 30px;
 }
 ````
 
+![exemple](_readme-img/grid-max-min-00.PNG)
 
+The item 1 takes all the content.
+
+The item 6 takes the content of the longer content.
+
+To solve that problem; we can change the width by `min-content`or `max-content` in `grid-template-rows`:
+
+````scss
+.container{
+  width: 1000px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: max-content 1fr min-content;
+  grid-gap: 30px;
+}
+````
+
+![exemple](_readme-img/grid-max-min-01.PNG)
+
+### Minmax function / repeat
+
+The minmax () function defines a space greater than or equal to a minimum value and less than or equal to a maximum value. It accepts two parameters, a minimum value and a maximum value.
+
+`minmax (min, max)`
+
+If the defined maximum value is less than the minimum value, it is ignored, and the function is treated as if it only had a minimum value.
+
+````scss
+.container{
+  width: 1000px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+  grid-template-columns: max-content 1fr min-content;
+  grid-gap: 30px;
+}
+````
+
+If the content fits in 150px in a row it will keep 150px for that row, otherwise it will adapt the row with the height of the content if it's superior than 150px.
+
+![exemple](_readme-img/grid-minmax-00.PNG)
+
+````scss
+.container{
+  width: 1000px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: minmax(200px, 700px) repeat(2,1fr);
+  width: 90%;
+}
+
+````
+
+All the elements of the rows have 150px height (we use reapeat to clone them).
+
+First elements of column take a lenght of 700px if there is enough space otherwise it will decrease but stop at 200px lenght.
+
+The othersshare the free space.
+
+![exemple](_readme-img/grid-minmax-02.PNG)
+
+### auto-fill / auto-fit
+
+`auto-fill` FILLS the row with as many columns as it can fit. So it creates implicit columns whenever a new column can fit, because it’s trying to FILL the row with as many columns as it can. The newly added columns can and may be empty, but they will still occupy a designated space in the row.
+
+````scss
+.container{
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(auto-fill, 100px);
+  width: 1000px;
+}
+````
+
+![exemple](_readme-img/grid-auto-fill-00.PNG)
+
+`auto-fit` FITS the CURRENTLY AVAILABLE columns into the space by expanding them so that they take up any available space. The browser does that after FILLING that extra space with extra columns (as with auto-fill ) and then collapsing the empty ones.
+
+````scss
+.container{
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  //for implicit grids
+  grid-auto-rows: 150px;
+  width: 90%;
+}
+````
+
+If we reduce the screen ant that it's not possible to keep 150px lenght for each items, items are put on the next rows...
+
+![exemple](_readme-img/grid-auto-fit-00.PNG)
+
+It's a powerful way to make responsive without media queries.
 
 ## How to test
 
