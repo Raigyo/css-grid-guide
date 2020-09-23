@@ -1,11 +1,10 @@
 .container{
+  width: 1000px;
+  margin: 30px auto;
   display: grid;
   grid-template-rows: repeat(2, 150px);
-  grid-template-columns: repeat(3, 150px);
-  grid-template-areas: "head head head"
-                        "footer footer footer footer";
+  grid-template-columns: max-content 1fr min-content;
   grid-gap: 30px;
-  margin: 25px;
 }
 
 .items{

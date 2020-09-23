@@ -1,13 +1,15 @@
 .container {
+  width: 1000px;
+  margin: 30px auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 150px 30px 150px;
+  -ms-grid-rows: (150px)[2];
   grid-template-rows: repeat(2, 150px);
-  -ms-grid-columns: 150px 30px 150px 30px 150px;
-  grid-template-columns: repeat(3, 150px);
-      grid-template-areas: "head head head" "footer footer footer footer";
+  -ms-grid-columns: -webkit-max-content 1fr -webkit-min-content;
+  -ms-grid-columns: max-content 1fr min-content;
+  grid-template-columns: -webkit-max-content 1fr -webkit-min-content;
+  grid-template-columns: max-content 1fr min-content;
   grid-gap: 30px;
-  margin: 25px;
 }
 
 .items {
