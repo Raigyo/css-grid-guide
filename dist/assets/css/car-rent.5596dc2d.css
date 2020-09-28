@@ -1,2 +1,96 @@
+body {
+  font-family: "Lato";
+  color: #6d5d4b;
+}
 
-/*# sourceMappingURL=/maps/car-rent.5596dc2d.css.map */
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(6rem, 1fr) [start] (minmax(-webkit-min-content, 14rem))[8] [end] minmax(6rem, 1fr);
+  -ms-grid-columns: minmax(6rem, 1fr) [start] (minmax(min-content, 14rem))[8] [end] minmax(6rem, 1fr);
+  grid-template-columns: minmax(6rem, 1fr) [start] repeat(8, minmax(-webkit-min-content, 14rem)) [end] minmax(6rem, 1fr);
+  grid-template-columns: minmax(6rem, 1fr) [start] repeat(8, minmax(min-content, 14rem)) [end] minmax(6rem, 1fr);
+}
+
+.grille {
+  grid-column: start/end;
+  margin: 12rem 0 12rem 0;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 7rem;
+}
+
+.carte {
+  background-color: #f9f7f6;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 3.5rem;
+  border: 1px solid #000;
+}
+
+.carteImg {
+  width: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  grid-column: 1/-1;
+}
+
+.name {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  z-index: 3;
+  width: 80%;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1.25rem;
+  background-color: #101d3c;
+  color: #fff;
+  font-weight: 400;
+  transform: translateY(50%);
+}
+
+.location, .cars {
+  margin-top: 2.5rem;
+}
+
+.location, .cars, .details, .prix {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+i {
+  fill: #c69963;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.btn {
+  grid-column: 1/-1;
+  background-color: #9e5a63;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.btn:hover {
+  background: #314455;
+}
+
+/*# sourceMappingURL=/assets/maps/car-rent.5596dc2d.css.map */
