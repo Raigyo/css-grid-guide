@@ -31,29 +31,5 @@
     "prettier": "^2.1.1",
     "sass": "^1.26.10",
     "typescript": "^4.0.2"
-  },
-  "customDistStructure": {
-    "config": {
-      ".js": "assets/js",
-      ".map": "assets/maps",
-      ".css": "assets/css",
-      "assets/images": [
-        ".jpg",
-        ".jpeg",
-        ".png",
-        ".webp",
-        ".gif"
-      ],
-      "assets/medias": [
-        ".ogg",
-        ".webm",
-        ".mp4",
-        ".mp3",
-        ".wav"
-      ]
-    },
-    "options": {
-      "development": true
-    }
   }
 }
