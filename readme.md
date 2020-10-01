@@ -113,7 +113,7 @@ Fraction of the free space in the grid (using the fr unit).
 
 All the items will share the available space:
 
-![exemple](_readme-img/fractional-unit.PNG)
+![exemple](_readme-img/fractional-unit.png)
 
 ### Grid explicit and implicit
 
